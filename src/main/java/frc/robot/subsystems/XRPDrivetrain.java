@@ -58,6 +58,18 @@ public class XRPDrivetrain extends SubsystemBase {
     return m_rightEncoder.getDistance();
   }
 
+  public double getAverageDistanceInch() {
+    return (getLeftDistanceInch() + getRightDistanceInch()) / 2.0;
+  }
+
+  public int getLeftEncoderCount() {
+    return m_leftEncoder.get();
+  }
+
+  public int getRightEncoderCount() {
+    return m_rightEncoder.get();
+  }
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run

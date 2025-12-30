@@ -12,4 +12,18 @@ package frc.robot;
  * <p>It is advised to statically import this class (or one of its inner classes) wherever the
  * constants are needed, to reduce verbosity.
  */
-public final class Constants {}
+public final class Constants {
+        // We considered using this to remove the deadband when calibrating Auto sequences
+    // However, this factor is probably smaller than the contribution of assumptions 
+    // that we made during this exercise.  So, we are not adding in this correction for now.
+    public final static double DeadbandCompensationForAutos = 0.02;
+    
+    // Attenuates power sent to one wheel or the other 
+    // Range: (-1.0 to +1.0) - positive values slow down the left
+    public final static double WheelSpeedMatchingAttenuationFactor =  0.045;
+
+    // Scale: -1.0 and +1.0 represent maximum reverse and forward motor speeds
+    public final static double DriveTurnSpeed = 0.7;
+    public final static double CalibrationDriveSpeed = 0.7;
+    public final static double CalibrationDriveDistanceInches = 10;
+}

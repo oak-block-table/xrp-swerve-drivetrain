@@ -5,6 +5,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
+import frc.robot.commands.AutoCommandFirstTestPath;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.XRPDrivetrain;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -19,7 +20,7 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final XRPDrivetrain m_xrpDrivetrain = new XRPDrivetrain();
 
-  private final ExampleCommand m_autoCommand = new ExampleCommand(m_xrpDrivetrain);
+  private final Command m_autoCommand = new AutoCommandFirstTestPath(m_xrpDrivetrain);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
