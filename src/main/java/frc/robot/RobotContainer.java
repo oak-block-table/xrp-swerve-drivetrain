@@ -5,6 +5,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
+import frc.robot.commands.AutoCommandExerciseDriveTrain;
 import frc.robot.commands.AutoCommandExerciseOneWheelModule;
 import frc.robot.subsystems.XRPDifferentialSwerveWheel;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -18,9 +19,11 @@ import edu.wpi.first.wpilibj2.command.Command;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   //private final XRPDrivetrain m_xrpDrivetrain = new XRPDrivetrain();
-  private final XRPDifferentialSwerveWheel wheelModule = new XRPDifferentialSwerveWheel();
+  private final XRPDifferentialSwerveWheel wheelModule0 = new XRPDifferentialSwerveWheel(0, 2);
+  private final XRPDifferentialSwerveWheel wheelModule1 = new XRPDifferentialSwerveWheel(1, 3);
 
-  private final Command m_autoCommand = new AutoCommandExerciseOneWheelModule(wheelModule);
+  //private final Command m_autoCommand = new AutoCommandExerciseOneWheelModule(wheelModule1);
+  private final Command m_autoCommand = new AutoCommandExerciseDriveTrain(wheelModule0, wheelModule1);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {

@@ -13,8 +13,14 @@ public class XRPDifferentialSwerveWheel  extends SubsystemBase {
 
   // The XRP has the left and right motors set to
   // channels 0 and 1 respectively
-  private final XRPMotor topGearMotor = new XRPMotor(0);
-  private final XRPMotor bottomGearMotor = new XRPMotor(2);//1);
+  private final XRPMotor topGearMotor; //= new XRPMotor(0);
+  private final XRPMotor bottomGearMotor;// = new XRPMotor(2);//1);
+
+  /** Creates a new XRPDifferentialSwerveWheel. */
+  public XRPDifferentialSwerveWheel(int topGearMotorPort, int bottomGearMotorPort) {
+    topGearMotor = new XRPMotor(topGearMotorPort);
+    bottomGearMotor = new XRPMotor(bottomGearMotorPort);
+   }
 
   // These are temporary diagnositic methods that may be removed after prototyping
   // All inputs range from -1 (reverse) to +1 (forward) where 0 means stop
