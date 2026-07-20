@@ -31,7 +31,7 @@ public class AutoCommandExerciseDriveTrain  extends Command {
     // Called when the command is initially scheduled.
     @Override
     public void initialize() {
-        System.out.println("Starting auto command ExerciseOneWheelModule");
+        System.out.println("Starting auto command ExerciseDriveTrain");
         stepNumber = 0;
         stepStartTime = System.currentTimeMillis();
     }

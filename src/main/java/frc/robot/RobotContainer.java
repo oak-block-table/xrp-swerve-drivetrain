@@ -9,6 +9,7 @@ import frc.robot.commands.AutoCommandExerciseDriveTrain;
 import frc.robot.commands.AutoCommandExerciseOneWheelModule;
 import frc.robot.subsystems.XRPDifferentialSwerveWheel;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -24,6 +25,8 @@ public class RobotContainer {
 
   //private final Command m_autoCommand = new AutoCommandExerciseOneWheelModule(wheelModule1);
   private final Command m_autoCommand = new AutoCommandExerciseDriveTrain(wheelModule0, wheelModule1);
+
+  //private final CommandXboxController controller = new CommandXboxController(0);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
