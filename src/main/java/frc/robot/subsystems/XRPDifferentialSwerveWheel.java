@@ -1,5 +1,6 @@
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.xrp.XRPMotor;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -15,6 +16,12 @@ public class XRPDifferentialSwerveWheel  extends SubsystemBase {
   // channels 0 and 1 respectively
   private final XRPMotor topGearMotor; //= new XRPMotor(0);
   private final XRPMotor bottomGearMotor;// = new XRPMotor(2);//1);
+
+  // The XRP has onboard encoders that are hardcoded
+  // to use DIO pins 4/5 and 6/7 for the left and right
+  // TODO: These channels will change for the swerve drive train; each module will use four distinct channels
+  //private final Encoder topEncoder = new Encoder(4, 5);
+  //private final Encoder bottomEncoder = new Encoder(6, 7);
 
   /** Creates a new XRPDifferentialSwerveWheel. */
   public XRPDifferentialSwerveWheel(int topGearMotorPort, int bottomGearMotorPort) {
