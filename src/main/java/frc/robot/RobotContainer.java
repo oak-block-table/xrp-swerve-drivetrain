@@ -7,6 +7,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.AutoCommandExerciseDriveTrain;
 import frc.robot.commands.AutoCommandExerciseOneWheelModule;
+import frc.robot.subsystems.DriveTrainTwoWheels;
 import frc.robot.subsystems.WheelHomeSensor;
 import frc.robot.subsystems.XRPDifferentialSwerveWheel;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -24,6 +25,8 @@ public class RobotContainer {
   private final XRPDifferentialSwerveWheel wheelModule0 = new XRPDifferentialSwerveWheel(0, 2);
   private final XRPDifferentialSwerveWheel wheelModule1 = new XRPDifferentialSwerveWheel(1, 3);
   public final WheelHomeSensor wheelHomeSensor0 = new WheelHomeSensor(); //(22);
+  public final XboxController xboxController = new XboxController(0);
+  public final DriveTrainTwoWheels driveTrain = new DriveTrainTwoWheels(wheelModule0, wheelModule1);
 
   //private final Command m_autoCommand = new AutoCommandExerciseOneWheelModule(wheelModule1);
   private final Command m_autoCommand = new AutoCommandExerciseDriveTrain(wheelModule0, wheelModule1);

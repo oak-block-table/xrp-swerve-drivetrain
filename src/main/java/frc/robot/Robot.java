@@ -48,6 +48,7 @@ public class Robot extends TimedRobot {
   @Override
   public void disabledInit() {
     //m_robotContainer.wheelHomeSensor0.clearState();
+    m_robotContainer.driveTrain.haltMotion();
   }
 
   @Override
@@ -58,6 +59,8 @@ public class Robot extends TimedRobot {
   /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class. */
   @Override
   public void autonomousInit() {
+    m_robotContainer.driveTrain.haltMotion();
+
     m_autonomousCommand = m_robotContainer.getAutonomousCommand();
 
     // schedule the autonomous command (example)
@@ -83,7 +86,10 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during operator control. */
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+    // Should we refactor this into a command?
+    m_robotContainer.driveTrain.driveWithController(m_robotContainer.xboxController);
+  }
 
   @Override
   public void testInit() {
